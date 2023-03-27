@@ -1,10 +1,8 @@
 import '../App.css'
-import { useState} from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 function NavBar() {
-  const [showCart, setShowCart] = useState(false);
 
   return (
     <>
@@ -16,10 +14,10 @@ function NavBar() {
             <li><Link to="/about">About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li>
-              <button className="cart-button" onClick={() => setShowCart(!showCart)}>
+              <li className="cart-button">
                 <FaShoppingCart />
-                <span className="cart-item-count">{0}</span>
-              </button>
+                <span className="cart-item-count">{' : 0'}</span>
+              </li>
             </li>
           </ul>
         </nav>
