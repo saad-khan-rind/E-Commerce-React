@@ -1,6 +1,7 @@
 import '../App.css'
 import { useState, useEffect } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
 
@@ -34,10 +35,10 @@ function NavBar() {
         <nav>
           <ul>
             {categories.map((categoryData, index) => (
-              <li key={index}><a href='/' onClick={(event) => {sessionStorage.setItem("item_key", categoryData)}}>{categoryData}</a></li>
+              <li key={index}><Link to='/' onClick={(event) => {sessionStorage.setItem("item_key", categoryData)}}>{categoryData}</Link></li>
             ))}
-            <li><a href='/about'>About</a></li>
-            <li><a href='/contact'>Contact</a></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
             <li>
               <button className="cart-button" onClick={() => setShowCart(!showCart)}>
                 <FaShoppingCart />
