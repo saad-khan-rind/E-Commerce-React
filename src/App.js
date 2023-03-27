@@ -6,6 +6,9 @@ import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 import NavBar from './components/NavBar';
 
+
+
+
 function App() {
   return (
     <>
