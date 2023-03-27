@@ -3,19 +3,15 @@ import ProductDetail from './ProductDetail';
 import '../App.css';
 
 function HomePage() {
-  var item_key = sessionStorage.getItem("item_key");
-  if (!item_key) {
-    item_key = 'electronics';
-  }
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/'+ item_key)
+    fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(json => setProducts(json));
-  }, [item_key]);
+  }, []);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
