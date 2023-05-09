@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const ProductDetail = ({ productId }) => {
+const ProductDetail = ({ productId, addToCart }) => {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(0);
 
@@ -19,9 +19,13 @@ const ProductDetail = ({ productId }) => {
     setQuantity(parseInt(value));
   }
 
-  
-  
-  
+  const handleAddToCart = () => {
+    if (quantity > 0) {
+      addToCart(product, quantity);
+    } else {
+      alert("Quantity should be more than 0");
+    }
+  }
   return (
     <div>
       {product ? (
@@ -39,7 +43,7 @@ const ProductDetail = ({ productId }) => {
             <label htmlFor="price">Price:</label>
             <span id="price">{product.price}</span>
           </div>
-          <button >Add to Cart</button>
+          <button onClick={handleAddToCart}>Add to Cart</button>
         </>
       ) : (
         <p>Loading...</p>

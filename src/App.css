@@ -105,30 +105,21 @@ button {
   button:hover {
   background-color: #542c85;
   }
-  .cart-button {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    padding: 10px 40px 15px;
-    border-radius: 10px;
-    border: 2px solid #7d4cdb;
-    background-color: #542c85;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  
-  .cart-button:hover {
-    color: #7d4cdb;
-    background-color: #fff;
-    border-color: #7d4cdb;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  }
-  
+
+  /* App.css */
+.cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-items {
+  width: 60%;
+}
+
+.order-summary {
+  width: 35%;
+}
+
 
   .search-bar {
     float: left;

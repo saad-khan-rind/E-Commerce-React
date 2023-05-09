@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ProductDetail from './ProductDetail';
 import '../App.css';
 
-function HomePage() {
+function HomePage({ addToCart }) {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -34,7 +34,7 @@ function HomePage() {
       </header>
       <main>
         {selectedProduct ? (
-          <ProductDetail productId={selectedProduct.id} />
+          <ProductDetail productId={selectedProduct.id} addToCart={addToCart} />
         ) : (
           <div className="product-grid">
             {filteredProducts.map(product => (
