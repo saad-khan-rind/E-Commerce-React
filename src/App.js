@@ -43,7 +43,6 @@ function App() {
   };
 
   const checkout = () => {
-    // ... logic to adjust the stock goes here ...
     clearCart();
   };
 
